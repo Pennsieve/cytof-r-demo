@@ -120,7 +120,7 @@ RUN cat /tmp/libgdal_paths.txt
 # RUN make install
 
 
-# RUN Rscript -e "install.packages(c('ggplot2', 'readxl', 'dplyr', 'ggpubr', 'RColorBrewer', 'viridis', 'cowplot', 'patchwork', 'tidyr', 'stringr', 'ggsci', 'magrittr', 'mblm', 'rstatix', 'spdep', 'psych', 'ggbeeswarm', 'umap', 'reshape2', 'pheatmap', 'plotly','logger', 'logging' ), repos = 'https://cloud.r-project.org/',Ncpus=16)"
+RUN Rscript -e "install.packages(c('ggplot2', 'readxl', 'dplyr', 'ggpubr', 'RColorBrewer', 'viridis', 'cowplot', 'patchwork', 'tidyr', 'stringr', 'ggsci', 'magrittr', 'mblm', 'rstatix', 'spdep', 'psych', 'ggbeeswarm', 'umap', 'reshape2', 'pheatmap', 'plotly','logger', 'logging' ), repos = 'https://cloud.r-project.org/',Ncpus=16)"
 
 COPY runtime.R bootstrap.R IH_Report_CyTOF_20230531.R  ${LAMBDA_TASK_ROOT}/
 COPY 20230531_IH_gating_AALC_IHCV.csv 20230531_counts_renamed_with_meta.csv /tmp/
